@@ -132,29 +132,6 @@ flowchart TD
 2. **Long press** to select bit index 5
 3. System confirms and returns to main menu
 
-## Button Functions Diagram
-
-```mermaid
-stateDiagram-v2
-    [*] --> StatusMode
-    StatusMode --> MenuMode : Double-click
-    StatusMode --> StatusMode : Long press (status update)
-    StatusMode --> StatusMode : Short press (ignored)
-    
-    MenuMode --> StatusMode : Double-click (ignored)
-    MenuMode --> MenuMode : Short press (navigate)
-    MenuMode --> MenuMode : Long press (select)
-    MenuMode --> ConsoleMode : Select Console Mode
-    
-    ConsoleMode --> StatusMode : Short press (exit)
-    ConsoleMode --> MenuMode : Double-click (enter menu)
-    ConsoleMode --> ConsoleMode : Long press (clear console)
-    
-    StatusMode --> [*]
-    MenuMode --> [*]
-    ConsoleMode --> [*]
-```
-
 ## Configuration Examples
 
 ### Example 1: Root Device (HID = 1, Bit Index = 0)
